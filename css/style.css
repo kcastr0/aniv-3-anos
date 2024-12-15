@@ -1,79 +1,46 @@
-/* Estilo geral da página */
-body {
-    background-color: #F9C07E; /* Cor de fundo caju */
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilo do título e subtítulo */
-h1 {
-    color: #333;
-    font-size: 36px;
-    margin-top: 50px;
-}
-
-h2 {
-    color: #555;
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-/* Seção do carrossel */
-.carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Estilo do contêiner do carrossel */
+.carrossel-container {
     position: relative;
-    margin-top: 40px;
-}
-
-.image-container {
-    display: flex;
-    overflow: hidden;
     width: 80%;
+    margin: auto;
+    overflow: hidden;
 }
 
-.image {
-    flex-shrink: 0;
-    width: 100%;
+.carrossel {
+    display: flex;
     transition: transform 0.5s ease;
 }
 
-.image img {
+.carrossel img {
     width: 100%;
-    border-radius: 10px;
+    max-width: 500px;
+    height: auto;
+    display: block;
 }
 
-/* Estilo das setas de navegação */
-.arrow {
+/* Estilo das setas */
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1000;
 }
 
-.arrow.left {
-    left: 10px;
+.prev {
+    left: 0;
 }
 
-.arrow.right {
-    right: 10px;
+.next {
+    right: 0;
 }
 
-/* Estilo do player de áudio */
-.audio-container {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-/* Adiciona uma borda ao redor do conteúdo */
-.container {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
+/* Efeito nas setas quando o usuário passa o mouse */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
