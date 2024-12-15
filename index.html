@@ -3,25 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Imagens e Música</title>
+    <title>Meu Site Interativo</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
 </head>
 <body>
-    <h1>Bem-vindo ao meu site!</h1>
+    <div class="container">
+        <!-- Espaço para o título -->
+        <div class="title-section">
+            <h1>Compartilhando a vida com você há 3 anos</h1>
+            <h2>Subtítulo explicativo sobre o site</h2>
+        </div>
 
-    <!-- Exibindo a imagem 1 -->
-    <img src="images/aniv_ayrton.jpeg" alt="Imagem 1" width="500px">
+        <!-- Caixa de texto para a mensagem -->
+        <div class="message-box">
+            <textarea id="userMessage" placeholder="Digite sua mensagem aqui..."></textarea>
+        </div>
 
-    <!-- Exibindo a imagem 2 -->
-    <img src="images/natal_2.jpeg" alt="Imagem 2" width="500px">
+        <!-- Localização em tempo real -->
+        <div id="location" class="location">
+            <button onclick="getLocation()">Obter Localização</button>
+            <p id="locationInfo"></p>
+            <div id="map" style="height: 300px; width: 100%;"></div>
+        </div>
 
-    <!-- Exibindo a imagem 3 -->
-    <img src="images/ponta_negra.jpeg" alt="Imagem 3" width="500px">
+        <!-- Exibindo imagens lado a lado -->
+        <div class="image-container">
+            <img src="imagens/aniv_ayrton.jpeg" alt="Imagem 1" class="image">
+            <img src="imagens/natal_2.jpeg" alt="Imagem 2" class="image">
+            <img src="imagens/ponta_negra.jpeg" alt="Imagem 3" class="image">
+        </div>
 
-    <!-- Adicionando a música -->
-    <audio controls>
-        <source src="music/Liniker - TUDO.mp3" type="audio/mp3">
-        Seu navegador não suporta a tag de áudio.
-    </audio>
+        <!-- Adicionando a música -->
+        <audio controls>
+            <source src="Liniker - TUDO.mp3" type="audio/mp3">
+            Seu navegador não suporta a tag de áudio.
+        </audio>
+    </div>
+
+    <script>
+        // Função para obter a localização do usuário
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("locationInfo").innerHTML = "Geolocalização não suportada pelo seu navegador.";
+            }
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            document.getElementById("locationInfo").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
+
+            // Inicializa o mapa
+            var map = L.map('map').setView([lat, lon], 13);
+
+            // Adiciona a camada do mapa (OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Marca a posição do usuário no mapa
+            L.marker([lat, lon]).addTo(map)
+                .bindPopup("Você está aqui!")
+                .openPopup();
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("locationInfo").innerHTML = "Usuário negou a solicitação de geolocalização.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("locationInfo").innerHTML = "A informação de localização não está disponível.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("locationInfo").innerHTML = "A solicitação de localização expirou.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("locationInfo").innerHTML = "Um erro desconhecido ocorreu.";
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
+
