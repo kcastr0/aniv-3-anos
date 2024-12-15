@@ -1,33 +1,78 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel com Imagens</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+/* Define o layout geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4C2C2; /* Cor de fundo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+}
 
-    <div class="carrossel-container">
-        <!-- Setas de navegação -->
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+/* Define um título e subtítulo no topo */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #A15A52; /* Cor de texto do título */
+}
 
-        <div class="carrossel">
-            <!-- Imagens do carrossel -->
-            <img src="imagens/aniv_ayrton.jpeg" alt="Imagem 1">
-            <img src="imagens/natal_2.jpeg" alt="Imagem 2">
-            <img src="imagens/ponta_negra_2.jpeg" alt="Imagem 3">
-        </div>
+h2 {
+    text-align: center;
+    color: #A15A52; /* Cor de texto do subtítulo */
+}
 
-        <!-- Setas de navegação -->
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+/* Estilo do carrossel */
+.carrossel-container {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-    <audio controls autoplay>
-        <source src="music/Liniker - TUDO.mp3" type="audio/mp3">
-        Seu navegador não suporta a tag de áudio.
-    </audio>
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+.carrossel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Botões de navegação do carrossel */
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Música no final da página */
+.music-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A15A52;
+    padding: 10px;
+    text-align: center;
+}
+
+audio {
+    width: 80%;
+}
