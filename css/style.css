@@ -1,46 +1,78 @@
-/* Estilo do contêiner do carrossel */
+/* Define o layout geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4C2C2; /* Cor de fundo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+}
+
+/* Define um título e subtítulo no topo */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #A15A52; /* Cor de texto do título */
+}
+
+h2 {
+    text-align: center;
+    color: #A15A52; /* Cor de texto do subtítulo */
+}
+
+/* Estilo do carrossel */
 .carrossel-container {
-    position: relative;
-    width: 80%;
-    margin: auto;
+    display: flex;
     overflow: hidden;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .carrossel {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carrossel img {
     width: 100%;
-    max-width: 500px;
     height: auto;
-    display: block;
+    object-fit: cover;
 }
 
-/* Estilo das setas */
+/* Botões de navegação do carrossel */
 .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    font-size: 30px;
+    font-size: 24px;
     padding: 10px;
     cursor: pointer;
-    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .prev {
-    left: 0;
+    left: 10px;
 }
 
 .next {
-    right: 0;
+    right: 10px;
 }
 
-/* Efeito nas setas quando o usuário passa o mouse */
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Música no final da página */
+.music-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #A15A52;
+    padding: 10px;
+    text-align: center;
+}
+
+audio {
+    width: 80%;
 }
