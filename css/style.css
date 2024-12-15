@@ -1,84 +1,79 @@
-/* Estilo geral para o body */
+/* Estilo geral da página */
 body {
+    background-color: #F9C07E; /* Cor de fundo caju */
     font-family: Arial, sans-serif;
-    background-color: #C68642; /* Cor Caju */
+    text-align: center;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Estilo para o título e subtítulo */
-.title-section {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+/* Estilo do título e subtítulo */
 h1 {
-    color: #FFFFFF; /* Cor branca */
+    color: #333;
     font-size: 36px;
-    margin: 0;
+    margin-top: 50px;
 }
 
 h2 {
-    color: #FFF; /* Cor branca */
+    color: #555;
     font-size: 24px;
-    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
-/* Estilo para a caixa de texto */
-.message-box {
-    text-align: center;
-    margin-bottom: 30px;
+/* Seção do carrossel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 40px;
 }
 
-textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-}
-
-/* Estilo da localização */
-.location {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#map {
-    height: 300px;
-    width: 100%;
-}
-
-/* Estilo das imagens */
 .image-container {
     display: flex;
-    justify-content: space-between; /* Distribui as imagens com espaçamento */
-    margin-top: 30px;
-    flex-wrap: wrap; /* Permite quebra de linha se necessário */
-    gap: 10px; /* Espaço entre as imagens */
+    overflow: hidden;
+    width: 80%;
 }
 
 .image {
-    width: 30%; /* Tamanho reduzido das imagens */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* Para que as imagens se ajustem sem distorcer */
+    flex-shrink: 0;
+    width: 100%;
+    transition: transform 0.5s ease;
 }
 
-/* Estilo do áudio */
-audio {
-    display: block;
-    margin: 20px auto;
+.image img {
     width: 100%;
-    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Estilo das setas de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Estilo do player de áudio */
+.audio-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Adiciona uma borda ao redor do conteúdo */
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
