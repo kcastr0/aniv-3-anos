@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Imagens e Música</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo CSS -->
-</head>
-<body>
-    <h1>Bem-vindo ao meu site!</h1>
+let slideIndex = 0;
 
-    <!-- Carrossel de Imagens -->
-    <div class="carousel">
-        <div class="arrow left">&#8592;</div>
-        <div class="image-container">
-            <img src="images/aniv_ayrton.jpeg" alt="Imagem 1" class="image" width="500px">
-            <img src="images/natal_2.jpeg" alt="Imagem 2" class="image" width="500px">
-            <img src="images/ponta_negra.jpeg" alt="Imagem 3" class="image" width="500px">
-        </div>
-        <div class="arrow right">&#8594;</div>
-    </div>
+// Função para mover o carrossel
+function moveSlide(n) {
+    const slides = document.querySelectorAll(".carrossel img");
+    slideIndex += n;
 
-    <!-- Adicionando a música -->
-    <audio controls>
-        <source src="Liniker - TUDO.mp3" type="audio/mp3">
-        Seu navegador não suporta a tag de áudio.
-    </audio>
+    // Garantir que o índice fique dentro do intervalo de imagens
+    if (slideIndex >= slides.length) {
+        slideIndex = 0; // Volta para a primeira imagem
+    }
+    if (slideIndex < 0) {
+        slideIndex = slides.length - 1; // Vai para a última imagem
+    }
 
-    <!-- Incluindo o script JavaScript -->
-    <script src="js/script.js"></script>
-</body>
-</html>
+    // Mover o carrossel para o slide correto
+    const newTransform = -slideIndex * 100; // Cada imagem tem 100% de largura
+    document.querySelector(".carrossel").style.transform = `translateX(${newTransform}%)`;
+}
