@@ -5,89 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site Interativo</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <style>
+        /* Estilo geral da página */
+        body {
+            background-color: #F9C07E; /* Cor de fundo caju */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Estilo do título e subtítulo */
+        h1 {
+            color: #333;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #555;
+            font-size: 24px;
+        }
+
+        /* Seção de carrossel */
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .image-container {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .image {
+            flex-shrink: 0;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Espaço para o título -->
-        <div class="title-section">
-            <h1>Compartilhando a vida com você há 3 anos</h1>
-            <h2>Subtítulo explicativo sobre o site</h2>
-        </div>
+        <h1>Meu Site Interativo</h1>
+        <h2>Subtítulo aqui</h2>
 
-        <!-- Caixa de texto para a mensagem -->
-        <div class="message-box">
-            <textarea id="userMessage" placeholder="Digite sua mensagem aqui..."></textarea>
+        <div class="carousel">
+            <div class="arrow left">←</div>
+            <div class="image-container">
+                <!-- Imagens do carrossel -->
+                <div class="image"><img src="image1.jpg" alt="Imagem 1"></div>
+                <div class="image"><img src="image2.jpg" alt="Imagem 2"></div>
+                <div class="image"><img src="image3.jpg" alt="Imagem 3"></div>
+            </div>
+            <div class="arrow right">→</div>
         </div>
-
-        <!-- Localização em tempo real -->
-        <div id="location" class="location">
-            <button onclick="getLocation()">Obter Localização</button>
-            <p id="locationInfo"></p>
-            <div id="map" style="height: 300px; width: 100%;"></div>
-        </div>
-
-        <!-- Exibindo imagens lado a lado -->
-        <div class="image-container">
-            <img src="imagens/aniv_ayrton.jpeg" alt="Imagem 1" class="image">
-            <img src="imagens/natal_2.jpeg" alt="Imagem 2" class="image">
-            <img src="imagens/ponta_negra_2.jpeg" alt="Imagem 3" class="image">
-        </div>
-
-        <!-- Adicionando a música -->
-        <audio controls>
-            <source src="Liniker - TUDO.mp3" type="audio/mp3">
-            Seu navegador não suporta a tag de áudio.
-        </audio>
     </div>
 
     <script>
-        // Função para obter a localização do usuário
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                document.getElementById("locationInfo").innerHTML = "Geolocalização não suportada pelo seu navegador.";
+        document.addEventListener('DOMContentLoaded', function () {
+            const leftArrow = document.querySelector('.arrow.left');
+            const rightArrow = document.querySelector('.arrow.right');
+            const imageContainer = document.querySelector('.image-container');
+            const images = document.querySelectorAll('.image');
+            let currentIndex = 0;
+
+            // Função para mover a imagem para a esquerda
+            leftArrow.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = images.length - 1; // Volta para a última imagem
+                }
+                updateCarousel();
+            });
+
+            // Função para mover a imagem para a direita
+            rightArrow.addEventListener('click', function () {
+                if (currentIndex < images.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Volta para a primeira imagem
+                }
+                updateCarousel();
+            });
+
+            // Atualiza o carrossel com base no índice
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                imageContainer.style.transform = `translateX(${offset}%)`;
             }
-        }
-
-        function showPosition(position) {
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
-            document.getElementById("locationInfo").innerHTML = "Latitude: " + lat + "<br>Longitude: " + lon;
-
-            // Inicializa o mapa
-            var map = L.map('map').setView([lat, lon], 13);
-
-            // Adiciona a camada do mapa (OpenStreetMap)
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-
-            // Marca a posição do usuário no mapa
-            L.marker([lat, lon]).addTo(map)
-                .bindPopup("Você está aqui!")
-                .openPopup();
-        }
-
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("locationInfo").innerHTML = "Usuário negou a solicitação de geolocalização.";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("locationInfo").innerHTML = "A informação de localização não está disponível.";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("locationInfo").innerHTML = "A solicitação de localização expirou.";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("locationInfo").innerHTML = "Um erro desconhecido ocorreu.";
-                    break;
-            }
-        }
+        });
     </script>
 </body>
 </html>
-
