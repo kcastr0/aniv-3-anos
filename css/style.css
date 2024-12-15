@@ -1,24 +1,25 @@
-/* Define o layout geral da página */
+/* Degradê de cor caju */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F4C2C2; /* Cor de fundo */
+    background: linear-gradient(to bottom, #A15A52, #D9A79D); /* Degradê de cor caju */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+    min-height: 100vh;
 }
 
-/* Define um título e subtítulo no topo */
+/* Título e subtítulo */
 h1 {
     text-align: center;
     margin-top: 20px;
-    color: #A15A52; /* Cor de texto do título */
+    color: #FFFFFF; /* Cor branca para o título */
 }
 
 h2 {
     text-align: center;
-    color: #A15A52; /* Cor de texto do subtítulo */
+    color: #FFFFFF; /* Cor branca para o subtítulo */
+    margin-bottom: 20px;
 }
 
 /* Estilo do carrossel */
@@ -27,6 +28,7 @@ h2 {
     overflow: hidden;
     justify-content: center;
     margin-top: 20px;
+    position: relative;
 }
 
 .carrossel {
@@ -35,9 +37,10 @@ h2 {
 }
 
 .carrossel img {
-    width: 100%;
+    width: 300px; /* Tamanho fixo para as imagens do carrossel */
     height: auto;
     object-fit: cover;
+    margin: 0 10px; /* Espaçamento entre as imagens */
 }
 
 /* Botões de navegação do carrossel */
@@ -62,7 +65,7 @@ h2 {
     right: 10px;
 }
 
-/* Música no final da página */
+/* Estilo do rodapé e da música */
 .music-container {
     position: fixed;
     bottom: 0;
@@ -74,5 +77,20 @@ h2 {
 }
 
 audio {
-    width: 80%;
+    width: 80%; /* Música ocupa 80% da largura */
+}
+
+/* Estilo de elementos adicionais (se necessário) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    padding: 20px;
+    background-color: #F2D6C4; /* Cor de fundo suave para a seção */
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
