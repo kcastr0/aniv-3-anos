@@ -1,35 +1,30 @@
-/* Estilo básico para o site */
+/* Arquivo CSS: style.css */
+
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #f0f0f0;
     text-align: center;
-    padding: 20px;
 }
 
+/* Estilo para o título */
 h1 {
-    margin: 0;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-section {
+/* Estilo para imagens */
+img {
+    border: 5px solid #ccc;
+    border-radius: 10px;
     margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Estilo para o player de áudio */
+audio {
+    display: block;
+    margin-top: 20px;
 }
