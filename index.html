@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Imagens e Música</title>
+    <title>Carrossel com Imagens</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Há 3 anos compartilhando a vida com você! 💖 </h1>
 
-    <!-- Exibindo as imagens -->
-    <div class="carousel">
-        <div class="arrow left">&#8592;</div>
-        <div class="image-container">
-            <img src="images/aniv_ayrton.jpeg" alt="Imagem 1" class="image" width="500px">
-            <img src="images/natal_2.jpeg" alt="Imagem 2" class="image" width="500px">
-            <img src="images/ponta_negra_2.jpeg" alt="Imagem 3" class="image" width="500px">
+    <div class="carrossel-container">
+        <!-- Setas de navegação -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+        <div class="carrossel">
+            <!-- Imagens do carrossel -->
+            <img src="imagens/aniv_ayrton.jpeg" alt="Imagem 1">
+            <img src="imagens/natal_2.jpeg" alt="Imagem 2">
+            <img src="imagens/ponta_negra_2.jpeg" alt="Imagem 3">
         </div>
-        <div class="arrow right">&#8594;</div>
+
+        <!-- Setas de navegação -->
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
-    <!-- Música -->
-    <audio controls>
-        <source src="Liniker - TUDO.mp3" type="audio/mp3">
+    <audio controls autoplay>
+        <source src="music/Liniker - TUDO.mp3" type="audio/mp3">
         Seu navegador não suporta a tag de áudio.
     </audio>
 
