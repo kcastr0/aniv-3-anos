@@ -37,7 +37,7 @@ h2 {
 }
 
 .carrossel img {
-    width: 300px; /* Tamanho fixo para as imagens do carrossel */
+    width: 150px; /* Tamanho fixo para as imagens do carrossel */
     height: auto;
     object-fit: cover;
     margin: 0 10px; /* Espaçamento entre as imagens */
