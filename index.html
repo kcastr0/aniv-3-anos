@@ -3,35 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para fazer um escarcéu com teu sorriso</title>
-    <!-- Caminho correto para o arquivo CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>  Há 3 anos compartilhando a vida com você!💖 </title>
+  
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>                  Há 3 anos compartilhando a vida com você! 💖</h1>
-    <h2>1095 dias vivendo e capturando memórias ao seu lado, ficando na sua vida e não largando do seu abraço.  </h2>
-
-    <!-- Carrossel de imagens -->
-    <div class="carrossel-container">
-        <div class="carrossel">
-            <img src="images/aniv_ayrton.jpeg" alt="Imagem 1">
-            <img src="images/natal_2.jpeg" alt="Imagem 2">
-            <img src="images/cirio.jpeg" alt="Imagem 3">
-            <img src="images/liniker.jpeg" alt="Imagem 4">
-            <img src="images/baia_golfinhos.jpeg" alt="Imagem 5">
+    <div class="photo-album">
+        <!-- Imagem principal -->
+        <div class="main-image-container">
+            <img id="main-image" src="images/image1.jpg" alt="Imagem Principal">
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+        <!-- Miniaturas (thumbnails) -->
+        <div class="thumbnails">
+            <img src="images/image1.jpg" alt="Miniatura 1" class="thumbnail" data-image="images/aniv_ayrton.jpeg">
+            <img src="images/image2.jpg" alt="Miniatura 2" class="thumbnail" data-image="images/natal_2.jpeg">
+            <img src="images/image3.jpg" alt="Miniatura 3" class="thumbnail" data-image="images/cirio.jpeg">
+            <img src="images/image4.jpg" alt="Miniatura 4" class="thumbnail" data-image="images/liniker.jpeg">
+            <img src="images/image5.jpg" alt="Miniatura 5" class="thumbnail" data-image="images/baia_golfinhos.jpeg">
+        </div>
     </div>
 
-    <!-- Caixa de música fixa no rodapé -->
-    <div class="music-container">
-        <audio controls>
-            <source src="music/Liniker - TUDO.mp3" type="audio/mp3">
-            Seu navegador não suporta a tag de áudio.
-        </audio>
-    </div>
-
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
