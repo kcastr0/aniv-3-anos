@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz 3 anos! ✨  </title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Carrossel de Imagens com Música</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Título e Subtítulo -->
-    <div class="header">
-        <h1>Para fazer um escarcéu com o teu sorriso 💖</h1>
-        <p>1095 dias colecionando memórias com você e te escolhendo todos os dias!</p>
+    <!-- Contêiner das partículas -->
+    <div class="particle-container">
+        <!-- As partículas são geradas automaticamente por JavaScript -->
     </div>
 
-    <!-- Container do Carrossel -->
-    <div class="photo-album">
-        <!-- Imagem Principal -->
-        <div class="main-image-container">
-            <img id="main-image" src="images/image1.jpg" alt="Imagem Principal">
-        </div>
+    <!-- Título e Subtítulo -->
+    <div class="header">
+        <h1>Galeria de Imagens</h1>
+        <p>Uma coleção especial de fotos com animação!</p>
+    </div>
 
-        <!-- Miniaturas -->
+    <!-- Carrossel de Imagens -->
+    <div class="photo-album">
+        <div class="main-image-container">
+            <img id="main-image" src="image1.jpg" alt="Imagem Principal">
+        </div>
         <div class="thumbnails">
-            <img src="images/image1.jpg" alt="Imagem 1" class="thumbnail" data-image="image1.jpg">
-            <img src="images/image2.jpg" alt="Imagem 2" class="thumbnail" data-image="image2.jpg">
-            <img src="images/image3.jpg" alt="Imagem 3" class="thumbnail" data-image="image3.jpg">
-            <img src="images/image4.jpg" alt="Imagem 4" class="thumbnail" data-image="image4.jpg">
-            <img src="images/image5.jpg" alt="Imagem 5" class="thumbnail" data-image="image5.jpg">
-            <img src="images/image6.jpg" alt="Imagem 6" class="thumbnail" data-image="image6.jpg">
+            <img src="image1.jpg" class="thumbnail" alt="Thumbnail 1" onclick="changeImage('image1.jpg')">
+            <img src="image2.jpg" class="thumbnail" alt="Thumbnail 2" onclick="changeImage('image2.jpg')">
+            <img src="image3.jpg" class="thumbnail" alt="Thumbnail 3" onclick="changeImage('image3.jpg')">
+             <img src="image3.jpg" class="thumbnail" alt="Thumbnail 3" onclick="changeImage('image4.jpg')">
+             <img src="image3.jpg" class="thumbnail" alt="Thumbnail 3" onclick="changeImage('image5.jpg')">
+             <img src="image3.jpg" class="thumbnail" alt="Thumbnail 3" onclick="changeImage('image6.jpg')">
+            
+            <!-- Adicione mais miniaturas conforme necessário -->
         </div>
     </div>
 
     <!-- Música -->
     <div class="music-container">
         <audio controls>
-            <source src="music/Liniker - TUDO.mp3" type="audio/mp3">
-            Seu navegador não suporta a tag de áudio.
+            <source src="Liniker - TUDO.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
         </audio>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
