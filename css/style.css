@@ -13,57 +13,23 @@ body {
     overflow: hidden;
 }
 
-/* Partículas animadas */
-@keyframes sparkle {
-    0% { transform: translateY(0) scale(0.5); opacity: 0.5; }
-    50% { transform: translateY(-100px) scale(1); opacity: 0.8; }
-    100% { transform: translateY(0) scale(0.5); opacity: 0.5; }
-}
-
+/* Partículas */
 .particle {
     position: absolute;
     width: 10px;
     height: 10px;
     background-color: silver; /* Cor prata para os confeites */
     border-radius: 50%;
-    animation: sparkle 2s infinite ease-in-out;
+    animation: sparkle 4s ease-in-out infinite;
     pointer-events: none; /* Impede que as partículas interajam com o conteúdo */
+    opacity: 0.7;
 }
 
-.particle:nth-child(odd) {
-    animation-duration: 2.5s;
-    animation-delay: 1s;
-}
-
-.particle:nth-child(even) {
-    animation-duration: 3s;
-    animation-delay: 0s;
-}
-
-/* Criar as partículas em locais aleatórios */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.particle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.particle-container .particle {
-    animation: sparkle 4s infinite ease-in-out;
+/* Animação das Partículas */
+@keyframes sparkle {
+    0% { transform: translateY(0) scale(0.5); opacity: 0.5; }
+    50% { transform: translateY(-200px) scale(1); opacity: 0.8; }
+    100% { transform: translateY(0) scale(0.5); opacity: 0.5; }
 }
 
 /* Título e Subtítulo */
