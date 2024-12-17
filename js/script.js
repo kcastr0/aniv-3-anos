@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Verifica a imagem principal ao carregar
     if (thumbnails.length > 0) {
-        verifyImageLoad(mainImage, "images/fallback.jpg");
+        verifyImageLoad(mainImage, "images/fallback.jpeg");
         thumbnails[0].click(); // Define a primeira miniatura como ativa
     }
 });
