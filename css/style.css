@@ -27,57 +27,52 @@ h1 {
     margin-top: 10px;
 }
 
-/* Container do Álbum */
-.photo-album {
+/* Carrossel */
+.carousel-container {
+    position: relative;
     width: 80%;
     max-width: 800px;
-    background-color: #FFF8F0; /* Fundo claro do álbum */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #F4C2C2; /* Borda caju */
     margin-top: 30px;
+    overflow: hidden;
 }
 
-/* Imagem Principal */
-.main-image-container {
-    text-align: center;
-    margin-bottom: 20px;
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.main-image-container img {
+.carousel-image {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
-    border: 3px solid #F4C2C2; /* Borda caju na imagem principal */
 }
 
-/* Miniaturas */
-.thumbnails {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 2px solid transparent;
-    border-radius: 5px;
+/* Controles do Carrossel */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-    transition: border-color 0.3s;
-    margin: 5px;
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.thumbnail:hover {
-    border-color: #A15A52; /* Cor do hover (tom de caju mais escuro) */
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.thumbnail.active {
-    border-color: #F4C2C2; /* Cor da miniatura ativa */
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 /* Música no final da página */
@@ -97,12 +92,7 @@ audio {
 
 /* Adicionando responsividade */
 @media (max-width: 768px) {
-    .main-image-container img {
+    .carousel-image {
         max-height: 300px;
-    }
-
-    .thumbnail {
-        width: 60px;
-        height: 60px;
     }
 }
