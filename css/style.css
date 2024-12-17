@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
 }
 
 /* Título */
@@ -69,8 +70,12 @@ h1 {
     border-color: #F4C2C2; /* Cor da miniatura ativa */
 }
 
-/* Adicionando responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
+    .photo-album {
+        width: 90%;
+    }
+
     .main-image-container img {
         max-height: 300px;
     }
