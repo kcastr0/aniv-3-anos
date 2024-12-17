@@ -17,14 +17,6 @@ h1 {
     color: #A15A52;
 }
 
-/* Subtítulo */
-#subtitle {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20px;
-    color: #A15A52;
-}
-
 /* Carrossel */
 .carousel-container {
     width: 80%;
