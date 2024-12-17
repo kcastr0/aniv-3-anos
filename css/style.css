@@ -6,16 +6,25 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Título */
-h1 {
+/* Título e Subtítulo */
+.header {
     text-align: center;
+    margin-top: 50px;
+}
+
+.header h1 {
     color: #F4C2C2; /* Cor caju */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #A15A52; /* Cor para o subtítulo */
+    font-size: 1.2em;
 }
 
 /* Container do Carrossel */
@@ -27,6 +36,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 2px solid #F4C2C2; /* Borda caju */
+    margin-top: 30px;
 }
 
 /* Imagem Principal */
@@ -38,7 +48,7 @@ h1 {
 .main-image-container img {
     width: 100%;
     max-height: 400px;
-    object-fit: contain;
+    object-fit: contain; /* Ajusta a imagem sem cortá-la */
     border-radius: 10px;
     border: 3px solid #F4C2C2; /* Borda caju na imagem principal */
 }
@@ -68,6 +78,14 @@ h1 {
 
 .thumbnail.active {
     border-color: #F4C2C2; /* Cor da miniatura ativa */
+}
+
+/* Música */
+.music-container {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 50px;
+    text-align: center;
 }
 
 /* Responsividade */
