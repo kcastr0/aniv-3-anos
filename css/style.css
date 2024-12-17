@@ -1,61 +1,55 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #FAD2D2, #F4C2C2); /* Fundo com gradiente caju */
+    background: #F4C2C2; /* Fundo cor caju */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    text-align: center;
 }
 
 /* Título */
 h1 {
-    text-align: center;
-    color: #A15A52;
+    color: #A15A52; /* Cor caju */
+    margin-top: 20px;
 }
 
-/* Carrossel */
+/* Container do Carrossel */
 .carousel-container {
+    position: relative;
     width: 80%;
     max-width: 800px;
-    margin-top: 20px;
-    overflow: hidden; /* Para esconder as imagens que saem da tela */
-    border: 2px solid #F4C2C2; /* Cor da borda caju */
+    margin: 20px auto;
+    overflow: hidden; /* Garante que as imagens fora do limite não sejam visíveis */
     border-radius: 10px;
 }
 
+/* Carrossel */
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; /* Transição suave */
 }
 
 .carousel-image {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: cover; /* Garante que as imagens se ajustem ao espaço disponível */
     border-radius: 10px;
 }
 
-/* Música */
+/* Música no final da página */
 .music-container {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #A15A52;
+    background-color: #A15A52; /* Cor caju */
     padding: 10px;
     text-align: center;
 }
 
-/* Responsividade */
+/* Adicionando responsividade */
 @media (max-width: 768px) {
     .carousel-container {
         width: 90%;
-    }
-    h1 {
-        font-size: 24px;
     }
 }
