@@ -13,24 +13,24 @@ body {
 
 /* Título */
 h1 {
-    font-size: 2.5rem;
     text-align: center;
     color: #A15A52;
     margin-top: 20px;
 }
 
-/* Subtítulo */
+/* Subtítulo com efeito máquina de escrever */
 #subtitle {
-    font-size: 1.5rem;
     text-align: center;
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
     color: #A15A52;
-    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 /* Carrossel */
 .carousel-container {
     position: relative;
-    width: 80%;
+    width: 80%; /* Ajuste a largura do carrossel */
     max-width: 800px;
     margin-top: 30px;
     overflow: hidden;
@@ -38,41 +38,29 @@ h1 {
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel-image {
-    width: 100%;
-    max-height: 400px;
+.carousel img {
+    width: 100%; /* Define o tamanho da imagem para ocupar toda a largura */
+    height: auto; /* Mantém a proporção das imagens */
     object-fit: cover;
-    border-radius: 10px;
 }
 
-/* Controles do Carrossel */
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 1;
+/* Container do Álbuns de Fotos */
+.photo-album {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 10px;
+    justify-content: center;
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
+/* Estilo das imagens no carrossel */
+.carousel img {
+    max-width: 400px; /* Define a largura máxima das imagens no carrossel */
+    margin-right: 10px;
 }
 
 /* Música no final da página */
@@ -88,11 +76,4 @@ button:hover {
 
 audio {
     width: 80%;
-}
-
-/* Adicionando responsividade */
-@media (max-width: 768px) {
-    .carousel-image {
-        max-height: 300px;
-    }
 }
