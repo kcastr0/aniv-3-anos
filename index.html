@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Álbum de Fotos</title>
-    <!-- Caminho para o arquivo CSS dentro da pasta css -->
+    <!-- Caminho para o arquivo CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,22 +15,20 @@
     <!-- Subtítulo com efeito máquina de escrever -->
     <div id="subtitle"></div>
 
-    <!-- Container do Álbum -->
-    <div class="photo-album">
-        <!-- Imagem Principal -->
-        <div class="main-image-container">
-            <img id="main-image" src="images/image1.jpg" alt="Imagem Principal">
+    <!-- Carrossel de Imagens -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="images/image1.jpg" alt="Imagem 1" class="carousel-image">
+            <img src="images/image2.jpg" alt="Imagem 2" class="carousel-image">
+            <img src="images/image3.jpg" alt="Imagem 3" class="carousel-image">
+            <img src="images/image4.jpg" alt="Imagem 4" class="carousel-image">
+            <img src="images/image5.jpg" alt="Imagem 5" class="carousel-image">
+            <img src="images/image6.jpg" alt="Imagem 6" class="carousel-image">
         </div>
 
-        <!-- Miniaturas -->
-        <div class="thumbnails">
-            <img src="images/image1.jpg" alt="Imagem 1" class="thumbnail">
-            <img src="images/image2.jpg" alt="Imagem 2" class="thumbnail">
-            <img src="images/image3.jpg" alt="Imagem 3" class="thumbnail">
-            <img src="images/image4.jpg" alt="Imagem 4" class="thumbnail">
-            <img src="images/image5.jpg" alt="Imagem 5" class="thumbnail">
-            <img src="images/image6.jpg" alt="Imagem 6" class="thumbnail">
-        </div>
+        <!-- Controles do Carrossel -->
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
     </div>
 
     <!-- Música -->
@@ -41,7 +39,7 @@
         </audio>
     </div>
 
-    <!-- Caminho para o arquivo JavaScript dentro da pasta js -->
+    <!-- Caminho para o arquivo JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
