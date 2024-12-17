@@ -1,11 +1,11 @@
-// Selecionando todas as miniaturas
+// Selecionando todas as miniaturas e a imagem principal
 const thumbnails = document.querySelectorAll('.thumbnail');
+const mainImage = document.getElementById('main-image');
 
 // Criando a função de exibição ampliada
 thumbnails.forEach((thumbnail) => {
     thumbnail.addEventListener('click', () => {
-        // Aqui você pode adicionar a funcionalidade de ampliação ou outra interação.
-        // Vamos adicionar uma ação simples que exibe o nome da imagem ao clicar.
-        alert(`Você clicou na imagem: ${thumbnail.alt}`);
+        // Atualizando a imagem principal com a imagem clicada
+        mainImage.src = thumbnail.src;
     });
 });
