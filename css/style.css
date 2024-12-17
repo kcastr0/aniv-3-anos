@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #FAD2D2, #F4C2C2); /* Fundo com gradiente */
+    background: linear-gradient(to bottom, #FF9900, #FFDD00); /* Fundo com gradiente */
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,7 +18,7 @@ body {
 }
 
 .header h1 {
-    color: #F4C2C2; /* Cor caju */
+    color: #FF9900; /* Cor caju */
     margin-bottom: 10px;
     font-size: 2.5em; /* Ajuste no tamanho do título */
 }
