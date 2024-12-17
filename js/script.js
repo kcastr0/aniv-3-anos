@@ -1,35 +1,39 @@
-// JavaScript para o Álbum de Fotos
-document.addEventListener("DOMContentLoaded", () => {
-    const thumbnails = document.querySelectorAll(".thumbnail"); // Seleciona todas as miniaturas
-    const mainImage = document.querySelector(".main-image-container img"); // Seleciona a imagem principal
+// Definindo o texto do subtítulo
+const subtitleText = "Momentos que merecem ser lembrados";
 
-    // Função para verificar se uma imagem foi carregada corretamente
-    const verifyImageLoad = (imgElement, fallbackSrc) => {
-        imgElement.onerror = () => {
-            console.error(`Erro ao carregar a imagem: ${imgElement.src}`);
-            imgElement.src = fallbackSrc; // Define uma imagem de fallback
-        };
-    };
-
-    // Adiciona evento de clique para cada miniatura
-    thumbnails.forEach((thumbnail) => {
-        verifyImageLoad(thumbnail, "images/fallback.jpeg"); // Verifica as miniaturas
-
-        thumbnail.addEventListener("click", () => {
-            // Atualiza a imagem principal para corresponder à miniatura clicada
-            mainImage.src = thumbnail.src;
-
-            // Remove a classe 'active' de todas as miniaturas
-            thumbnails.forEach((thumb) => thumb.classList.remove("active"));
-
-            // Adiciona a classe 'active' à miniatura clicada
-            thumbnail.classList.add("active");
-        });
-    });
-
-    // Verifica a imagem principal ao carregar
-    if (thumbnails.length > 0) {
-        verifyImageLoad(mainImage, "images/fallback.jpeg");
-        thumbnails[0].click(); // Define a primeira miniatura como ativa
+// Função para animar a escrita do subtítulo
+function typeWriter(element, text, i, callback) {
+    if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(element, text, i, callback), 100); // Controla a velocidade da digitação
+    } else {
+        callback();
     }
+}
+
+// Quando a página carregar, o efeito é acionado
+document.addEventListener("DOMContentLoaded", () => {
+    const subtitle = document.getElementById("subtitle");
+    typeWriter(subtitle, subtitleText, 0, () => {});
+});
+
+// Função para alterar a imagem principal ao clicar nas miniaturas
+function setActiveImage(event) {
+    const mainImage = document.getElementById("main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    // Remove a classe 'active' das miniaturas anteriores
+    thumbnails.forEach(thumbnail => thumbnail.classList.remove("active"));
+
+    // Adiciona a classe 'active' à miniatura clicada
+    event.target.classList.add("active");
+
+    // Atualiza a imagem principal
+    mainImage.src = event.target.src;
+}
+
+// Adiciona eventos de clique nas miniaturas
+document.querySelectorAll(".thumbnail").forEach(thumbnail => {
+    thumbnail.addEventListener("click", setActiveImage);
 });
