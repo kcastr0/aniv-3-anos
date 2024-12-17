@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #D5B891; /* Cor caju como fundo */
+    background: linear-gradient(to bottom, #FAD2D2, #F4C2C2); /* Fundo com gradiente caju */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,33 +9,30 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    text-align: center;
 }
 
 /* Título */
 h1 {
-    color: #A15A52; /* Cor de caju para o título */
-    margin-top: 20px;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-/* Subtítulo com efeito máquina de escrever */
-#subtitle {
-    font-size: 24px;
-    font-family: "Courier New", Courier, monospace;
+    text-align: center;
     color: #A15A52;
-    margin-bottom: 30px;
 }
 
-/* Container do Carrossel */
+/* Subtítulo */
+#subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: #A15A52;
+}
+
+/* Carrossel */
 .carousel-container {
-    position: relative;
     width: 80%;
     max-width: 800px;
-    margin-top: 30px;
-    overflow: hidden;
-    margin-bottom: 30px; /* Espaçamento abaixo do carrossel */
+    margin-top: 20px;
+    overflow: hidden; /* Para esconder as imagens que saem da tela */
+    border: 2px solid #F4C2C2; /* Cor da borda caju */
+    border-radius: 10px;
 }
 
 .carousel {
@@ -43,29 +40,14 @@ h1 {
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel img {
-    width: 100%; /* Ajusta as imagens para ocupar toda a largura do contêiner */
-    height: auto; /* Mantém a proporção das imagens */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem cortar a parte importante */
-}
-
-/* Container para as imagens do carrossel */
-.photo-album {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-/* Estilo das miniaturas no carrossel */
-.photo-album img {
-    max-width: 150px; /* Definir tamanho das miniaturas */
+.carousel-image {
+    width: 100%;
     height: auto;
-    border-radius: 5px;
-    border: 2px solid #A15A52;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Música no final da página */
+/* Música */
 .music-container {
     position: fixed;
     bottom: 0;
@@ -76,6 +58,12 @@ h1 {
     text-align: center;
 }
 
-audio {
-    width: 80%;
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 90%;
+    }
+    h1 {
+        font-size: 24px;
+    }
 }
