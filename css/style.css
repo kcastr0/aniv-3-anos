@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #FAD2D2, #F4C2C2); /* Fundo com gradiente caju */
+    background-color: #D5B891; /* Cor caju como fundo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,31 +9,33 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    text-align: center;
 }
 
 /* Título */
 h1 {
-    text-align: center;
-    color: #A15A52;
+    color: #A15A52; /* Cor de caju para o título */
     margin-top: 20px;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 /* Subtítulo com efeito máquina de escrever */
 #subtitle {
-    text-align: center;
     font-size: 24px;
     font-family: "Courier New", Courier, monospace;
     color: #A15A52;
     margin-bottom: 30px;
 }
 
-/* Carrossel */
+/* Container do Carrossel */
 .carousel-container {
     position: relative;
-    width: 80%; /* Ajuste a largura do carrossel */
+    width: 80%;
     max-width: 800px;
     margin-top: 30px;
     overflow: hidden;
+    margin-bottom: 30px; /* Espaçamento abaixo do carrossel */
 }
 
 .carousel {
@@ -42,25 +44,25 @@ h1 {
 }
 
 .carousel img {
-    width: 100%; /* Define o tamanho da imagem para ocupar toda a largura */
+    width: 100%; /* Ajusta as imagens para ocupar toda a largura do contêiner */
     height: auto; /* Mantém a proporção das imagens */
-    object-fit: cover;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem cortar a parte importante */
 }
 
-/* Container do Álbuns de Fotos */
+/* Container para as imagens do carrossel */
 .photo-album {
-    width: 50%;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
     gap: 10px;
     justify-content: center;
+    margin-top: 30px;
 }
 
-/* Estilo das imagens no carrossel */
-.carousel img {
-    max-width: 200px; /* Define a largura máxima das imagens no carrossel */
-    margin-right: 10px;
+/* Estilo das miniaturas no carrossel */
+.photo-album img {
+    max-width: 150px; /* Definir tamanho das miniaturas */
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #A15A52;
 }
 
 /* Música no final da página */
