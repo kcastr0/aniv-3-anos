@@ -35,7 +35,7 @@ h1 {
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que as imagens se ajustem ao espaço disponível */
+    object-fit: contain; /* Ajuste para garantir que a imagem não seja cortada */
     border-radius: 10px;
 }
 
@@ -48,9 +48,9 @@ h1 {
 }
 
 .thumbnail {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Ajuste para garantir que a miniatura também não seja cortada */
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s;
