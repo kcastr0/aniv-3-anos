@@ -1,3 +1,22 @@
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+const totalImages = images.length;
+
+function moveCarousel(direction) {
+    currentIndex += direction;
+
+    // Garantir que o índice esteja dentro do intervalo válido
+    if (currentIndex < 0) {
+        currentIndex = totalImages - 1;
+    } else if (currentIndex >= totalImages) {
+        currentIndex = 0;
+    }
+
+    // Atualiza a posição do carrossel para a imagem atual
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
 // Efeito de máquina de escrever no subtítulo
 const subtitleText = "Veja as imagens incríveis!";
 let index = 0;
@@ -12,16 +31,3 @@ function typeSubtitle() {
 }
 
 window.onload = typeSubtitle;
-
-// Atualizar a imagem principal ao clicar nas miniaturas
-const thumbnails = document.querySelectorAll('.thumbnail');
-const mainImage = document.getElementById('main-image');
-
-thumbnails.forEach((thumbnail) => {
-    thumbnail.addEventListener('click', (event) => {
-        const newSrc = event.target.src;
-        mainImage.src = newSrc; // Atualiza a imagem principal
-        thumbnails.forEach((thumb) => thumb.classList.remove('active')); // Remove a classe "active" das miniaturas
-        event.target.classList.add('active'); // Adiciona a classe "active" à miniatura clicada
-    });
-});
