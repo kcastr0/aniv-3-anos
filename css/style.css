@@ -9,34 +9,12 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    position: relative; /* Para garantir que o efeito de partículas fique atrás do conteúdo */
-    overflow: hidden;
-}
-
-/* Partículas */
-.particle {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: silver; /* Cor prata para os confeites */
-    border-radius: 50%;
-    animation: sparkle 4s ease-in-out infinite;
-    pointer-events: none; /* Impede que as partículas interajam com o conteúdo */
-    opacity: 0.7;
-}
-
-/* Animação das Partículas */
-@keyframes sparkle {
-    0% { transform: translateY(0) scale(0.5); opacity: 0.5; }
-    50% { transform: translateY(-200px) scale(1); opacity: 0.8; }
-    100% { transform: translateY(0) scale(0.5); opacity: 0.5; }
 }
 
 /* Título e Subtítulo */
 .header {
     text-align: center;
     margin-top: 50px;
-    z-index: 10; /* Para garantir que o título fique sobre as partículas */
 }
 
 .header h1 {
@@ -62,7 +40,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 2px solid black; /* Bordas em preto */
     margin-top: 30px;
-    z-index: 10; /* Para garantir que o carrossel fique acima das partículas */
 }
 
 /* Imagem Principal */
