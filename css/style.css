@@ -49,7 +49,7 @@ h1 {
 
 /* Container do Álbuns de Fotos */
 .photo-album {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -59,7 +59,7 @@ h1 {
 
 /* Estilo das imagens no carrossel */
 .carousel img {
-    max-width: 400px; /* Define a largura máxima das imagens no carrossel */
+    max-width: 200px; /* Define a largura máxima das imagens no carrossel */
     margin-right: 10px;
 }
 
