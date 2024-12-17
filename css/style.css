@@ -11,28 +11,30 @@ body {
 h1 {
     color: #A15A52; /* Cor caju */
     margin-top: 20px;
+    font-size: 36px;
 }
 
 /* Container do Carrossel */
 .carousel-container {
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px; /* Aumentando a largura */
+    margin: 40px auto;
     overflow: hidden; /* Garante que as imagens fora do limite não sejam visíveis */
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionando sombra ao container */
 }
 
 /* Imagem Principal */
 .main-image-container {
     width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    height: 500px; /* Aumentando a altura para dar mais espaço à imagem */
+    margin-bottom: 20px;
 }
 
 .main-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover; /* Garante que as imagens se ajustem ao espaço disponível */
     border-radius: 10px;
 }
@@ -41,13 +43,13 @@ h1 {
 .thumbnails {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 20px; /* Aumentando a distância entre as miniaturas */
+    margin-top: 20px;
 }
 
 .thumbnail {
-    width: 60px;
-    height: 60px;
+    width: 100px; /* Aumentando o tamanho das miniaturas */
+    height: 100px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
@@ -56,7 +58,7 @@ h1 {
 
 /* Efeito de Hover nas Miniaturas */
 .thumbnail:hover {
-    transform: scale(1.1);
+    transform: scale(1.2); /* Aumentando o efeito de hover */
 }
 
 /* Música no final da página */
@@ -68,16 +70,36 @@ h1 {
     background-color: #A15A52; /* Cor caju */
     padding: 10px;
     text-align: center;
+    z-index: 10;
 }
 
 /* Adicionando responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .carousel-container {
-        width: 90%;
+        width: 95%;
     }
 
     .thumbnail {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 100%;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
     }
 }
