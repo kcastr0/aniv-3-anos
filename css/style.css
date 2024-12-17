@@ -1,7 +1,7 @@
-/* Fundo com gradiente caju */
+/* Fundo geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #d5b891, #f4c2c2);
+    background: linear-gradient(to bottom, #d5b891, #f4c2c2); /* Gradiente caju */
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,7 +14,7 @@ body {
 .container {
     width: 90%;
     max-width: 900px;
-    background-color: #fff8f0;
+    background-color: #fff8f0; /* Fundo claro */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -23,22 +23,27 @@ body {
 
 /* Cabeçalho */
 .header {
-    background-color: #f4c2c2;
-    padding: 20px;
+    background-color: #f4c2c2; /* Cor caju suave */
+    padding: 20px 10px;
     color: #fff;
+    border-bottom: 2px solid #d5b891;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em; /* Tamanho grande para o título */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .header h2 {
     margin: 10px 0 0;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #f0f0f0; /* Cor mais clara para o subtítulo */
 }
 
-/* Container do álbum */
+/* Container do Álbum */
 .photo-album {
     padding: 20px;
 }
@@ -50,7 +55,7 @@ body {
     object-fit: cover;
     border-radius: 10px;
     border: 3px solid #d5b891;
-    background-color: #f0f0f0; /* Fundo padrão caso imagem falhe */
+    background-color: #f0f0f0; /* Fundo padrão */
 }
 
 /* Miniaturas */
@@ -73,11 +78,11 @@ body {
 }
 
 .thumbnail:hover {
-    border-color: #a15a52; /* Cor do hover (tom caju mais escuro) */
+    border-color: #a15a52; /* Cor caju mais escura no hover */
 }
 
 .thumbnail.active {
-    border-color: #f4c2c2; /* Cor da miniatura ativa */
+    border-color: #f4c2c2;
 }
 
 /* Rodapé */
@@ -85,6 +90,7 @@ body {
     background-color: #f4c2c2;
     padding: 15px;
     text-align: center;
+    border-top: 2px solid #d5b891;
 }
 
 .footer audio {
