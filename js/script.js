@@ -1,16 +1,19 @@
-// Variáveis para manipulação do carrossel
-let index = 0;
-const images = document.querySelectorAll('.carousel-image');
-const totalImages = images.length;
+// Aguardar o carregamento completo do conteúdo
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector('.carousel');
+    const images = document.querySelectorAll('.carousel-image');
+    let index = 0;
 
-// Função para mover o carrossel
-function moveCarousel() {
-    index++;
-    if (index >= totalImages) {
-        index = 0;
+    // Função para mover para a próxima imagem
+    function moveToNextImage() {
+        index++;
+        if (index >= images.length) {
+            index = 0; // Volta para a primeira imagem
+        }
+        const offset = -index * 100; // Calcula o deslocamento para a nova imagem
+        carousel.style.transform = `translateX(${offset}%)`; // Aplica o deslocamento
     }
-    document.querySelector('.carousel').style.transform = `translateX(-${index * 100}%)`;
-}
 
-// Atualizar a imagem a cada 3 segundos
-setInterval(moveCarousel, 3000);
+    // Mudar as imagens a cada 3 segundos
+    setInterval(moveToNextImage, 3000); // 3000ms = 3 segundos
+});
