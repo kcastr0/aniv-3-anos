@@ -10,14 +10,15 @@ body {
     align-items: center;
     height: 100vh;
     color: #333; /* Cor do texto */
+    text-align: center;
 }
 
 /* Título */
 h1 {
     font-size: 3em;
     color: #4E2C2C; /* Cor do título */
-    text-align: center;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* Subtítulo (Máquina de Escrever) */
@@ -25,10 +26,11 @@ h1 {
     font-size: 1.5em;
     font-family: "Courier New", monospace;
     color: #4E2C2C;
-    text-align: center;
     margin-top: 10px;
     white-space: nowrap;
     overflow: hidden;
+    width: 100%;
+    display: inline-block;
 }
 
 /* Container do Álbum de Fotos */
@@ -93,12 +95,7 @@ h1 {
     width: 100%;
     background-color: #F4C2C2; /* Cor de fundo caju */
     padding: 10px;
-    text-align: center;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-audio {
-    width: 80%;
 }
 
 /* Responsividade */
@@ -110,5 +107,13 @@ audio {
     .thumbnail {
         width: 60px;
         height: 60px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #subtitle {
+        font-size: 1.2em;
     }
 }
