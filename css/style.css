@@ -48,8 +48,8 @@ h1 {
 }
 
 .thumbnail {
-    width: 150px; /* Aumentando o tamanho das miniaturas */
-    height: 150px;
+    width: 300px; /* Aumentando o tamanho das miniaturas */
+    height: 300px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
