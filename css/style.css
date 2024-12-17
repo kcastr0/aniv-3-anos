@@ -18,14 +18,14 @@ body {
 }
 
 .header h1 {
-    color: #FF7A00; /* Cor de laranja caju */
+    color: black; /* Título em preto */
     margin-bottom: 10px;
     font-size: 2.5em; /* Ajuste no tamanho do título */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombras no texto */
 }
 
 .header p {
-    color: #FF9E4D; /* Cor suave para o subtítulo */
+    color: black; /* Subtítulo em preto */
     font-size: 1.2em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombras no texto */
 }
@@ -38,7 +38,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #FF7A00; /* Borda em laranja */
+    border: 2px solid black; /* Bordas em preto */
     margin-top: 30px;
 }
 
@@ -53,7 +53,7 @@ body {
     max-height: 500px; /* Ajuste a altura máxima */
     object-fit: contain; /* Ajusta a imagem sem cortá-la */
     border-radius: 10px;
-    border: 3px solid #FF7A00; /* Borda em laranja */
+    border: 3px solid black; /* Borda da imagem em preto */
 }
 
 /* Miniaturas */
@@ -76,7 +76,7 @@ body {
 }
 
 .thumbnail:hover {
-    border-color: #FF7A00; /* Hover em laranja */
+    border-color: black; /* Hover nas miniaturas com borda preta */
 }
 
 .thumbnail.active {
