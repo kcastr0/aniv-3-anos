@@ -1,61 +1,61 @@
-/* Fundo geral */
+/* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #d5b891, #f4c2c2); /* Gradiente caju */
+    background-color: #D5B891; /* Cor de fundo caju */
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    color: #333; /* Cor do texto */
 }
 
-/* Container principal */
-.container {
-    width: 90%;
-    max-width: 900px;
-    background-color: #fff8f0; /* Fundo claro */
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+/* Título */
+h1 {
+    font-size: 3em;
+    color: #4E2C2C; /* Cor do título */
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Cabeçalho */
-.header {
-    background-color: #f4c2c2; /* Cor caju suave */
-    padding: 20px 10px;
-    color: #fff;
-    border-bottom: 2px solid #d5b891;
+/* Subtítulo (Máquina de Escrever) */
+#subtitle {
+    font-size: 1.5em;
+    font-family: "Courier New", monospace;
+    color: #4E2C2C;
+    text-align: center;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 2.5em; /* Tamanho grande para o título */
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.header h2 {
-    margin: 10px 0 0;
-    font-size: 1.3em;
-    font-weight: normal;
-    color: #f0f0f0; /* Cor mais clara para o subtítulo */
-}
-
-/* Container do Álbum */
+/* Container do Álbum de Fotos */
 .photo-album {
+    width: 80%;
+    max-width: 800px;
+    background-color: #FFF8F0; /* Cor de fundo do álbum */
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #F4C2C2; /* Borda caju */
+    margin-top: 40px;
 }
 
 /* Imagem Principal */
+.main-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .main-image-container img {
     width: 100%;
+    max-width: 600px; /* Limita o tamanho da imagem */
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
-    border: 3px solid #d5b891;
-    background-color: #f0f0f0; /* Fundo padrão */
+    border: 3px solid #F4C2C2; /* Borda caju */
 }
 
 /* Miniaturas */
@@ -63,8 +63,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 15px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .thumbnail {
@@ -78,22 +78,37 @@ body {
 }
 
 .thumbnail:hover {
-    border-color: #a15a52; /* Cor caju mais escura no hover */
+    border-color: #A15A52; /* Cor do hover (tom de caju mais escuro) */
 }
 
 .thumbnail.active {
-    border-color: #f4c2c2;
+    border-color: #F4C2C2; /* Cor da miniatura ativa */
 }
 
-/* Rodapé */
-.footer {
-    background-color: #f4c2c2;
-    padding: 15px;
-    text-align: center;
-    border-top: 2px solid #d5b891;
-}
-
-.footer audio {
+/* Música no final da página */
+.music-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
+    background-color: #F4C2C2; /* Cor de fundo caju */
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+audio {
+    width: 80%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-image-container img {
+        max-height: 300px;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
 }
