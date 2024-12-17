@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Adiciona evento de clique para cada miniatura
     thumbnails.forEach((thumbnail) => {
-        verifyImageLoad(thumbnail, "images/fallback.jpg"); // Verifica as miniaturas
+        verifyImageLoad(thumbnail, "images/fallback.jpeg"); // Verifica as miniaturas
 
         thumbnail.addEventListener("click", () => {
             // Atualiza a imagem principal para corresponder à miniatura clicada
