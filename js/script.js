@@ -15,22 +15,4 @@ document.addEventListener("DOMContentLoaded", function() {
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', changeMainImage);
     });
-
-    // Carrossel para alternar automaticamente as imagens
-    const carousel = document.querySelector('.carousel');
-    let index = 0;
-    const images = document.querySelectorAll('.carousel-image');
-
-    // Função para mover para a próxima imagem do carrossel
-    function moveToNextImage() {
-        index++;
-        if (index >= images.length) {
-            index = 0; // Volta para a primeira imagem
-        }
-        const offset = -index * 100; // Calcula o deslocamento para a nova imagem
-        carousel.style.transform = `translateX(${offset}%)`; // Aplica o deslocamento
-    }
-
-    // Mudar as imagens a cada 3 segundos
-    setInterval(moveToNextImage, 3000); // 3000ms = 3 segundos
 });
