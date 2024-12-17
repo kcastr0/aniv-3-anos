@@ -1,7 +1,7 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #FF9900, #FFDD00); /* Fundo com gradiente */
+    background: linear-gradient(to bottom, #FFD9A8, #FF7A00); /* Degradê de laranja suave */
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,14 +18,16 @@ body {
 }
 
 .header h1 {
-    color: #FF9900; /* Cor caju */
+    color: #FF7A00; /* Cor de laranja caju */
     margin-bottom: 10px;
     font-size: 2.5em; /* Ajuste no tamanho do título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombras no texto */
 }
 
 .header p {
-    color: #A15A52; /* Cor para o subtítulo */
+    color: #FF9E4D; /* Cor suave para o subtítulo */
     font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombras no texto */
 }
 
 /* Container do Carrossel */
@@ -36,7 +38,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #F4C2C2; /* Borda caju */
+    border: 2px solid #FF7A00; /* Borda em laranja */
     margin-top: 30px;
 }
 
@@ -51,7 +53,7 @@ body {
     max-height: 500px; /* Ajuste a altura máxima */
     object-fit: contain; /* Ajusta a imagem sem cortá-la */
     border-radius: 10px;
-    border: 3px solid #F4C2C2; /* Borda caju na imagem principal */
+    border: 3px solid #FF7A00; /* Borda em laranja */
 }
 
 /* Miniaturas */
@@ -74,11 +76,11 @@ body {
 }
 
 .thumbnail:hover {
-    border-color: #A15A52; /* Cor do hover */
+    border-color: #FF7A00; /* Hover em laranja */
 }
 
 .thumbnail.active {
-    border-color: #F4C2C2; /* Cor da miniatura ativa */
+    border-color: #FF9E4D; /* Miniatura ativa com borda suave */
 }
 
 /* Música */
