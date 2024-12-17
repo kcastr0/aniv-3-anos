@@ -1,7 +1,7 @@
-/* Estilo Geral */
+/* Fundo com gradiente caju */
 body {
     font-family: Arial, sans-serif;
-    background-color: #d5b891; /* Cor de fundo caju */
+    background: linear-gradient(to bottom, #d5b891, #f4c2c2);
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,29 +10,47 @@ body {
     min-height: 100vh;
 }
 
-/* Container do Álbum */
-.photo-album {
-    width: 80%;
-    max-width: 800px;
-    background-color: #ffffff; /* Fundo branco do álbum */
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #fff8f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #f4c2c2;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #b78b65; /* Borda com um tom mais escuro de caju */
+    color: #fff;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header h2 {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+/* Container do álbum */
+.photo-album {
+    padding: 20px;
 }
 
 /* Imagem Principal */
-.main-image-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .main-image-container img {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
-    border: 3px solid #b78b65; /* Borda caju */
+    border: 3px solid #d5b891;
+    background-color: #f0f0f0; /* Fundo padrão caso imagem falhe */
 }
 
 /* Miniaturas */
@@ -40,7 +58,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap; /* Permite que miniaturas quebrem linha, se necessário */
+    margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .thumbnail {
@@ -50,41 +69,25 @@ body {
     border: 2px solid transparent;
     border-radius: 5px;
     cursor: pointer;
-    transition: border-color 0.3s, transform 0.3s;
+    transition: border-color 0.3s;
 }
 
 .thumbnail:hover {
-    border-color: #b78b65; /* Cor de destaque no hover */
-    transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+    border-color: #a15a52; /* Cor do hover (tom caju mais escuro) */
 }
 
 .thumbnail.active {
-    border-color: #d5b891; /* Cor da miniatura ativa */
+    border-color: #f4c2c2; /* Cor da miniatura ativa */
 }
 
-/* Música no final da página */
-.music-container {
-    width: 100%;
-    background-color: #b78b65; /* Fundo da música com tom caju escuro */
-    padding: 10px;
+/* Rodapé */
+.footer {
+    background-color: #f4c2c2;
+    padding: 15px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
-.music-container audio {
-    width: 80%;
-}
-
-/* Adicionando responsividade */
-@media (max-width: 768px) {
-    .main-image-container img {
-        max-height: 300px;
-    }
-
-    .thumbnail {
-        width: 60px;
-        height: 60px;
-    }
+.footer audio {
+    width: 100%;
+    max-width: 400px;
 }
