@@ -6,43 +6,47 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     height: 100vh;
-    color: #333; /* Cor do texto */
-    text-align: center;
+    color: #5C3E2A; /* Cor do texto */
 }
 
 /* Título */
 h1 {
-    font-size: 3em;
-    color: #4E2C2C; /* Cor do título */
+    font-size: 3rem;
     margin-top: 20px;
-    margin-bottom: 10px;
+    text-align: center;
+    color: #5C3E2A;
 }
 
-/* Subtítulo (Máquina de Escrever) */
+/* Subtítulo com efeito de máquina de escrever */
 #subtitle {
-    font-size: 1.5em;
-    font-family: "Courier New", monospace;
-    color: #4E2C2C;
-    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #5C3E2A;
+    margin: 10px 0;
+    text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    width: 100%;
-    display: inline-block;
+    width: 0;
+    animation: typing 4s steps(30) forwards;
 }
 
-/* Container do Álbum de Fotos */
+/* Efeito de digitação (máquina de escrever) */
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* Container do Álbum */
 .photo-album {
     width: 80%;
     max-width: 800px;
-    background-color: #FFF8F0; /* Cor de fundo do álbum */
+    background-color: #FFF8F0; /* Fundo do álbum */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #F4C2C2; /* Borda caju */
-    margin-top: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 /* Imagem Principal */
@@ -53,38 +57,31 @@ h1 {
 
 .main-image-container img {
     width: 100%;
-    max-width: 600px; /* Limita o tamanho da imagem */
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
-    border: 3px solid #F4C2C2; /* Borda caju */
 }
 
 /* Miniaturas */
 .thumbnails {
     display: flex;
-    justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    gap: 15px;
+    justify-content: center;
 }
 
 .thumbnail {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border: 2px solid transparent;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: border-color 0.3s;
 }
 
 .thumbnail:hover {
-    border-color: #A15A52; /* Cor do hover (tom de caju mais escuro) */
-}
-
-.thumbnail.active {
-    border-color: #F4C2C2; /* Cor da miniatura ativa */
+    border-color: #5C3E2A; /* Cor do hover */
 }
 
 /* Música no final da página */
@@ -93,27 +90,24 @@ h1 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #F4C2C2; /* Cor de fundo caju */
+    background-color: #5C3E2A;
     padding: 10px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilo do player de música */
+audio {
+    width: 80%;
+    border-radius: 5px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .main-image-container img {
-        max-height: 300px;
+        max-height: 250px;
     }
-
     .thumbnail {
-        width: 60px;
-        height: 60px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    #subtitle {
-        font-size: 1.2em;
+        width: 100px;
+        height: 100px;
     }
 }
