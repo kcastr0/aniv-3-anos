@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    overflow-x: hidden; /* Evitar rolagem horizontal */
 }
 
 /* Título */
@@ -19,16 +20,17 @@ h1 {
     position: relative;
     width: 90%;
     max-width: 1200px; /* Aumentando a largura */
-    margin: 30px auto;
+    margin: 40px auto;
     overflow: hidden; /* Garante que as imagens fora do limite não sejam visíveis */
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionando sombra ao container */
+    padding-bottom: 60px; /* Espaço para a barra de música não cobrir as imagens */
 }
 
 /* Imagem Principal */
 .main-image-container {
     width: 100%;
-    height: 500px; /* Aumentando a altura da imagem principal */
+    height: 600px; /* Aumentando a altura da imagem principal */
     margin-bottom: 20px;
 }
 
@@ -44,12 +46,12 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 30px; /* Aumentando a distância entre as miniaturas */
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .thumbnail {
-    width: 100px; /* Aumentando o tamanho das miniaturas */
-    height: 100px;
+    width: 150px; /* Aumentando o tamanho das miniaturas */
+    height: 150px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
@@ -70,7 +72,8 @@ h1 {
     background-color: #A15A52; /* Cor caju */
     padding: 10px;
     text-align: center;
-    z-index: 10;
+    z-index: 10; /* Garante que a barra de música fique acima do conteúdo */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Adicionando sombra na barra de música */
 }
 
 /* Adicionando responsividade */
