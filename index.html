@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="photo-album">
-        <div class="main-image-container">
-            <!-- Certifique-se de que este arquivo realmente existe em 'images/image1.jpg' -->
-            <img id="main-image" src="images/image1.jpg" alt="Imagem Principal">
-        </div>
-        <div class="thumbnails">
-            <!-- Certifique-se de que os arquivos das miniaturas existem na pasta 'images' -->
-            <img class="thumbnail active" src="images/aniv_ayrton.jpeg" alt="Miniatura 1" onclick="changeMainImage('images/image1.jpg', this)">
-            <img class="thumbnail" src="images/baia_golfinhos.jpeg" alt="Miniatura 2" onclick="changeMainImage('images/image2.jpg', this)">
-            <img class="thumbnail" src="images/cirio.jpeg" alt="Miniatura 3" onclick="changeMainImage('images/image3.jpg', this)">
-            <img class="thumbnail" src="images/liniker.jpeg" alt="Miniatura 4" onclick="changeMainImage('images/image4.jpg', this)">
-            <img class="thumbnail" src="images/ponta_negra_2.jpeg" alt="Miniatura 5" onclick="changeMainImage('images/image5.jpg', this)">
-        </div>
+    <div class="container">
+        <!-- Título -->
+        <header class="header">
+            <h1>Álbum de Fotos</h1>
+            <h2>Explore momentos incríveis</h2>
+        </header>
+
+        <!-- Container do Álbum -->
+        <main class="photo-album">
+            <!-- Imagem Principal -->
+            <div class="main-image-container">
+                <img id="main-image" src="images/image1.jpg" alt="Imagem Principal">
+            </div>
+
+            <!-- Miniaturas -->
+            <div class="thumbnails">
+                <img class="thumbnail" src="images/natal_2.jpeg" alt="Miniatura 1">
+                <img class="thumbnail" src="images/ponta_negra_2.jpeg" alt="Miniatura 2">
+                <img class="thumbnail" src="images/baia_golfinhos.jpeg" alt="Miniatura 3">
+                <img class="thumbnail" src="images/cirio.jpeg" alt="Miniatura 4">
+                <img class="thumbnail" src="images/liniker.jpeg" alt="Miniatura 5">
+                 <img class="thumbnail" src="images/aniv_ayrton.jpeg" alt="Miniatura 5">
+            </div>
+        </main>
+
+        <!-- Música no final -->
+        <footer class="footer">
+            <div class="music-container">
+                <audio controls>
+                    <source src="music/Liniker - TUDO.mp3" type="audio/mpeg">
+                    Seu navegador não suporta a reprodução de áudio.
+                </audio>
+            </div>
+        </footer>
     </div>
 
-    <!-- Contêiner de música no final da página -->
-    <div class="music-container">
-        <audio controls>
-            <source src="music/Liniker - TUDO.mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
-    </div>
-
-    <script>
-        // JavaScript para trocar a imagem principal ao clicar em uma miniatura
-        function changeMainImage(imageSrc, thumbnail) {
-            const mainImage = document.getElementById('main-image');
-            const thumbnails = document.querySelectorAll('.thumbnail');
-
-            mainImage.src = imageSrc;
-
-            // Atualizar a classe "active" para destacar a miniatura ativa
-            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
-            thumbnail.classList.add('active');
-        }
-    </script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
