@@ -1,39 +1,27 @@
-// Definindo o texto do subtítulo
-const subtitleText = "Momentos que merecem ser lembrados";
+// Efeito de máquina de escrever no subtítulo
+const subtitleText = "Veja as imagens incríveis!";
+let index = 0;
+const subtitleElement = document.getElementById('subtitle');
 
-// Função para animar a escrita do subtítulo
-function typeWriter(element, text, i, callback) {
-    if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(() => typeWriter(element, text, i, callback), 100); // Controla a velocidade da digitação
-    } else {
-        callback();
+function typeSubtitle() {
+    if (index < subtitleText.length) {
+        subtitleElement.textContent += subtitleText.charAt(index);
+        index++;
+        setTimeout(typeSubtitle, 100);
     }
 }
 
-// Quando a página carregar, o efeito é acionado
-document.addEventListener("DOMContentLoaded", () => {
-    const subtitle = document.getElementById("subtitle");
-    typeWriter(subtitle, subtitleText, 0, () => {});
-});
+window.onload = typeSubtitle;
 
-// Função para alterar a imagem principal ao clicar nas miniaturas
-function setActiveImage(event) {
-    const mainImage = document.getElementById("main-image");
-    const thumbnails = document.querySelectorAll(".thumbnail");
+// Atualizar a imagem principal ao clicar nas miniaturas
+const thumbnails = document.querySelectorAll('.thumbnail');
+const mainImage = document.getElementById('main-image');
 
-    // Remove a classe 'active' das miniaturas anteriores
-    thumbnails.forEach(thumbnail => thumbnail.classList.remove("active"));
-
-    // Adiciona a classe 'active' à miniatura clicada
-    event.target.classList.add("active");
-
-    // Atualiza a imagem principal
-    mainImage.src = event.target.src;
-}
-
-// Adiciona eventos de clique nas miniaturas
-document.querySelectorAll(".thumbnail").forEach(thumbnail => {
-    thumbnail.addEventListener("click", setActiveImage);
+thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener('click', (event) => {
+        const newSrc = event.target.src;
+        mainImage.src = newSrc; // Atualiza a imagem principal
+        thumbnails.forEach((thumb) => thumb.classList.remove('active')); // Remove a classe "active" das miniaturas
+        event.target.classList.add('active'); // Adiciona a classe "active" à miniatura clicada
+    });
 });
