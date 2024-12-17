@@ -1,52 +1,42 @@
 /* Estilo Geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #D5B891; /* Cor de fundo caju */
+    background: linear-gradient(to bottom, #FAD2D2, #F4C2C2); /* Fundo com gradiente caju */
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
     height: 100vh;
-    color: #5C3E2A; /* Cor do texto */
+    flex-direction: column;
 }
 
 /* Título */
 h1 {
-    font-size: 3rem;
-    margin-top: 20px;
+    font-size: 2.5rem;
     text-align: center;
-    color: #5C3E2A;
+    color: #A15A52;
+    margin-top: 20px;
 }
 
-/* Subtítulo com efeito de máquina de escrever */
+/* Subtítulo */
 #subtitle {
     font-size: 1.5rem;
-    color: #5C3E2A;
-    margin: 10px 0;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 4s steps(30) forwards;
-}
-
-/* Efeito de digitação (máquina de escrever) */
-@keyframes typing {
-    0% { width: 0; }
-    100% { width: 100%; }
+    color: #A15A52;
+    margin-top: 10px;
 }
 
 /* Container do Álbum */
 .photo-album {
     width: 80%;
     max-width: 800px;
-    background-color: #FFF8F0; /* Fundo do álbum */
+    background-color: #FFF8F0; /* Fundo claro do álbum */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #F4C2C2; /* Borda caju */
+    margin-top: 30px;
 }
 
 /* Imagem Principal */
@@ -60,28 +50,34 @@ h1 {
     max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    border: 3px solid #F4C2C2; /* Borda caju na imagem principal */
 }
 
 /* Miniaturas */
 .thumbnails {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
     justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .thumbnail {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border: 2px solid transparent;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     transition: border-color 0.3s;
+    margin: 5px;
 }
 
 .thumbnail:hover {
-    border-color: #5C3E2A; /* Cor do hover */
+    border-color: #A15A52; /* Cor do hover (tom de caju mais escuro) */
+}
+
+.thumbnail.active {
+    border-color: #F4C2C2; /* Cor da miniatura ativa */
 }
 
 /* Música no final da página */
@@ -90,24 +86,23 @@ h1 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #5C3E2A;
+    background-color: #A15A52;
     padding: 10px;
     text-align: center;
 }
 
-/* Estilo do player de música */
 audio {
     width: 80%;
-    border-radius: 5px;
 }
 
-/* Responsividade */
+/* Adicionando responsividade */
 @media (max-width: 768px) {
     .main-image-container img {
-        max-height: 250px;
+        max-height: 300px;
     }
+
     .thumbnail {
-        width: 100px;
-        height: 100px;
+        width: 60px;
+        height: 60px;
     }
 }
