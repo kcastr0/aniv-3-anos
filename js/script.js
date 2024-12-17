@@ -1,25 +1,16 @@
-// Definindo o índice inicial da imagem
-let currentIndex = 0;
+// Selecionar elementos
+const mainImage = document.getElementById('main-image');
+const thumbnails = document.querySelectorAll('.thumbnail');
 
-// Função para mover o carrossel
-function moveSlide(step) {
-    const images = document.querySelectorAll('.carrossel img');
-    const totalImages = images.length;
+// Adicionar evento de clique nas miniaturas
+thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', function () {
+        // Atualizar a imagem principal
+        const newImage = this.getAttribute('data-image');
+        mainImage.src = newImage;
 
-    // Atualizando o índice da imagem
-    currentIndex = (currentIndex + step + totalImages) % totalImages;
-
-    // Calculando o deslocamento do carrossel
-    const offset = -currentIndex * 100;
-    document.querySelector('.carrossel').style.transform = `translateX(${offset}%)`;
-}
-
-// Função para iniciar o carrossel automaticamente (opcional)
-function autoSlide() {
-    setInterval(() => {
-        moveSlide(1); // Mover para a próxima imagem
-    }, 3000); // Muda a imagem a cada 3 segundos
-}
-
-// Chama a função autoSlide se você quiser o carrossel automático
-autoSlide();
+        // Marcar a miniatura ativa
+        thumbnails.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
