@@ -44,12 +44,12 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 30px; /* Aumentando a distância entre as miniaturas */
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .thumbnail {
-    width: 300px; /* Aumentando o tamanho das miniaturas */
-    height: 300px;
+    width: 150px; /* Aumentando o tamanho das miniaturas */
+    height: 150px;
     object-fit: cover;
     border-radius: 5px;
     cursor: pointer;
